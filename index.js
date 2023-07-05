@@ -1,7 +1,5 @@
-// index.js
-
-const readline = require('node:readline');
-const conversor = require('./conversor');
+import readline from 'readline';
+import { convertirDolaresAEuros, convertirDolaresALibras } from './conversor.js';
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -9,8 +7,8 @@ const rl = readline.createInterface({
 });
 
 rl.question('Ingresa la cantidad en dólares: ', (cantidadDolares) => {
-  const cantidadEuros = conversor.convertirDolaresAEuros(cantidadDolares);
-  const cantidadLibras = conversor.convertirDolaresALibras(cantidadDolares);
+  const cantidadEuros = convertirDolaresAEuros(cantidadDolares);
+  const cantidadLibras = convertirDolaresALibras(cantidadDolares);
 
   console.log(`${cantidadDolares} dólares equivalen a ${cantidadEuros} euros.`);
   console.log(`${cantidadDolares} dólares equivalen a ${cantidadLibras} libras.`);
